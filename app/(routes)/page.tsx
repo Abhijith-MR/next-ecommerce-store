@@ -13,7 +13,7 @@ const HomePage = async () => {
 
   return (
     <Container>
-      <div className="space-y-10 pb-10">
+      <div className="space-y-10 pb-10 bg-green-50">
         <Billboard
           data={billboard}
         />
