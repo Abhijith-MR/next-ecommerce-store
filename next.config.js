@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
         domains: [
-            "res.cloudinary.com"
+            "shop.folouu.com"
         ]
     }
 

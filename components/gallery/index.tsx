@@ -11,6 +11,7 @@ interface GalleryProps {
   images: Image[];
 }
 
+
 const Gallery: React.FC<GalleryProps> = ({
   images = []
 }) => {
@@ -29,7 +30,7 @@ const Gallery: React.FC<GalleryProps> = ({
             <div className="aspect-square relative h-full w-full sm:rounded-lg overflow-hidden">
               <NextImage
                 fill
-                src={image.url}
+                src={image.src}
                 alt="Image"
                 className="object-cover object-center"
               />

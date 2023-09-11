@@ -1,7 +1,7 @@
 import { Product } from "@/types";
 import queryString from "query-string";
 
-const URL=`${process.env.NEXT_PUBLIC_API_URL}/products`;
+const URL=`https://shop.folouu.com/wp-json/wc/v3/products`;
 
 interface Query {
   categoryId?: string;
@@ -11,16 +11,18 @@ interface Query {
 }
 
 const getProducts = async (query: Query): Promise<Product[]> => {
-  const url = queryString.stringifyUrl ({
-    url: URL,
-    query: {
-      colorId: query.colorId,
-      sizeId: query.sizeId,
-      categoryId: query.categoryId,
-      isFeatured: query.isFeatured,
-    }
-  })
-  const res = await fetch(url);
+  let url = URL;
+  if(query.categoryId != undefined){
+    url = url+'?category='+query.categoryId
+  }
+  const res = await fetch(url, {
+    headers: {
+      Authorization: 'Basic Y2tfZGQ4MzljNzc1YTliOWNjNGI4MzAwM2YwYWE4ODc0NDMxZTQzMmU4Zjpjc18zNDI0ZjczZTUwOTU3MGI1ZWQ2Y2RlODgyYzUzMjQzYTEyZTM2ZWE3',
+      Cookie: 'mailpoet_page_view=%7B%22timestamp%22%3A1693494494%7D',
+    },
+  });
+
+
 
   return res.json();
 };

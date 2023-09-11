@@ -20,7 +20,7 @@ const GalleryTab: React.FC<GalleryTabProps> = ({
           <span className="absolute h-full w-full aspect-square inset-0 overflow-hidden rounded-md">
             <NextImage 
               fill 
-              src={image.url} 
+              src={image.src} 
               alt="" 
               className="object-cover object-center" 
             />

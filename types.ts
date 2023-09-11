@@ -6,12 +6,24 @@ export interface Product {
     isFeatured: boolean;
     size: Size;
     color: Color;
-    images: Image[]
+    images: Image[];
+    dimensions: {
+      length: string;
+      width: string;
+      height: string;
+    };
+    attributes: Attribute[];
   };
+
+  export interface Attribute {
+    options: string[];
+    name: string;
+  }
   
   export interface Image {
     id: string;
-    url: string;
+    src: string;
+    color: Color;
   }
   
   export interface Billboard {

@@ -9,7 +9,6 @@ import getCategories from "@/actions/get-categories";
 const Navbar = async () => {
     const categories = await getCategories();
 
-    console.log("new error",categories)
 
 
     return (

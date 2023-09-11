@@ -22,7 +22,7 @@ const MainNav: React.FC<MainNavProps> = ({
     active: pathname === `/category/${route.id}`
   }));
 
-  console.log("new error", routes)
+
 
  
 
